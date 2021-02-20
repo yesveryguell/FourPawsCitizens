@@ -1,6 +1,6 @@
 package co.edu.unbosque.fourpawscitizens.model;
 
-public class Pet {
+public class PetDTO {
 	String id;
 	long microChip;
 	String species;
@@ -9,6 +9,20 @@ public class Pet {
 	boolean potentDangerous;
 	String neighborhood;
 
+	public PetDTO(String id, long microChip, String species, String sex, String size, boolean potentDangerous,
+			String neighborhood) {
+		super();
+		this.id = id;
+		this.microChip = microChip;
+		this.species = species;
+		this.sex = sex;
+		this.size = size;
+		this.potentDangerous = potentDangerous;
+		this.neighborhood = neighborhood;
+	}
+	public PetDTO() {
+		
+	}
 	/**
 	 * @return the id
 	 */
