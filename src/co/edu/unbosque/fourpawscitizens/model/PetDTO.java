@@ -1,124 +1,127 @@
 package co.edu.unbosque.fourpawscitizens.model;
 
 public class PetDTO {
-	String id;
-	long microChip;
-	String species;
-	String sex;
-	String size;
-	boolean potentDangerous;
-	String neighborhood;
 
-	public PetDTO(String id, long microChip, String species, String sex, String size, boolean potentDangerous,
-			String neighborhood) {
-		super();
-		this.id = id;
-		this.microChip = microChip;
-		this.species = species;
-		this.sex = sex;
-		this.size = size;
-		this.potentDangerous = potentDangerous;
-		this.neighborhood = neighborhood;
-	}
-	public PetDTO() {
-		
-	}
-	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
+    String id;
+    long microchip;
+    String species;
+    String sex;
+    String size;
+    boolean potentDangerous;
+    String neighborhood;
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
+    public PetDTO(String id, long microchip, String species, String sex, String size, boolean potentDangerous,
+                  String neighborhood) {
+        super();
+        this.id = id;
+        this.microchip = microchip;
+        this.species = species;
+        this.sex = sex;
+        this.size = size;
+        this.potentDangerous = potentDangerous;
+        this.neighborhood = neighborhood;
+    }
 
-	/**
-	 * @return the microChip
-	 */
-	public long getMicroChip() {
-		return microChip;
-	}
+    public PetDTO() {
 
-	/**
-	 * @param microChip the microChip to set
-	 */
-	public void setMicroChip(long microChip) {
-		this.microChip = microChip;
-	}
+    }
 
-	/**
-	 * @return the species
-	 */
-	public String getSpecies() {
-		return species;
-	}
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * @param species the species to set
-	 */
-	public void setSpecies(String species) {
-		this.species = species;
-	}
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	/**
-	 * @return the sex
-	 */
-	public String getSex() {
-		return sex;
-	}
+    /**
+     * @return the microchip
+     */
+    public long getMicrochip() {
+        return microchip;
+    }
 
-	/**
-	 * @param sex the sex to set
-	 */
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    /**
+     * @param microchip the microChip to set
+     */
+    public void setMicrochip(long microchip) {
+        this.microchip = microchip;
+    }
 
-	/**
-	 * @return the size
-	 */
-	public String getSize() {
-		return size;
-	}
+    /**
+     * @return the species
+     */
+    public String getSpecies() {
+        return species;
+    }
 
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(String size) {
-		this.size = size;
-	}
+    /**
+     * @param species the species to set
+     */
+    public void setSpecies(String species) {
+        this.species = species;
+    }
 
-	/**
-	 * @return the potentDangerous
-	 */
-	public boolean isPotentDangerous() {
-		return potentDangerous;
-	}
+    /**
+     * @return the sex
+     */
+    public String getSex() {
+        return sex;
+    }
 
-	/**
-	 * @param potentDangerous the potentDangerous to set
-	 */
-	public void setPotentDangerous(boolean potentDangerous) {
-		this.potentDangerous = potentDangerous;
-	}
+    /**
+     * @param sex the sex to set
+     */
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	/**
-	 * @return the neighborhood
-	 */
-	public String getNeighborhood() {
-		return neighborhood;
-	}
+    /**
+     * @return the size
+     */
+    public String getSize() {
+        return size;
+    }
 
-	/**
-	 * @param neighborhood the neighborhood to set
-	 */
-	public void setNeighborhood(String neighborhood) {
-		this.neighborhood = neighborhood;
-	}
+    /**
+     * @param size the size to set
+     */
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    /**
+     * @return the potentDangerous
+     */
+    public boolean isPotentDangerous() {
+        return potentDangerous;
+    }
+
+    /**
+     * @param potentDangerous the potentDangerous to set
+     */
+    public void setPotentDangerous(boolean potentDangerous) {
+        this.potentDangerous = potentDangerous;
+    }
+
+    /**
+     * @return the neighborhood
+     */
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    /**
+     * @param neighborhood the neighborhood to set
+     */
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
 
 }
