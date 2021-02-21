@@ -17,10 +17,6 @@ public class ManagerDAO {
         alPetId = new ArrayList<PetDTO>();
         uploadData();
         assingID();
-        for (int i = 0; i < alPetId.size(); i++) {
-
-            System.out.println(alPetId.get(i).getId());
-        }
     }
 
     public String uploadData() {
@@ -112,18 +108,27 @@ public class ManagerDAO {
     }
 
     public String findByMicrochip(long pMicrochip) {
-
-        PetDTO pet = new PetDTO();
-
+        String pet = "";
         for (int i = 0; i < alPetId.size(); i++) {
 
             if (pMicrochip == alPetId.get(i).getMicrochip()) {
-
-                pet = alPetId.get(i);
+                pet = pet + alPetId.get(i).toString();
             }
         }
 
-        return pet.toString();
+        return pet;
+    }
+
+    public String countBySpecies(String species) {
+        int a = 0;
+        for (int i = 0; i < alPetId.size(); i++) {
+            if (species.equals(alPetId.get(i).getSpecies())) {
+                a++;
+            }
+
+        }
+
+        return "The number of " + species + " is: " + a;
     }
 
 }
