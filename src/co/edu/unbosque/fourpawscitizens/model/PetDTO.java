@@ -27,6 +27,19 @@ public class PetDTO {
 
     }
 
+    @Override
+    public String toString() {
+        return "Pet[" +
+                "id='" + id + '\'' +
+                ", microchip=" + microchip +
+                ", species='" + species + '\'' +
+                ", sex='" + sex + '\'' +
+                ", size='" + size + '\'' +
+                ", potentDangerous=" + potentDangerous +
+                ", neighborhood='" + neighborhood + '\'' +
+                ']';
+    }
+
     /**
      * @return the id
      */
