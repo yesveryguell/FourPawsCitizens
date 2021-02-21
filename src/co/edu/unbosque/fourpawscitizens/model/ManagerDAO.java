@@ -107,15 +107,14 @@ public class ManagerDAO {
         return back;
     }
 
-    public String findByMicrochip(long pMicrochip) {
+    public String findByMicrochip(long microchip) {
         String pet = "";
         for (int i = 0; i < alPetId.size(); i++) {
 
-            if (pMicrochip == alPetId.get(i).getMicrochip()) {
+            if (microchip == alPetId.get(i).getMicrochip()) {
                 pet = pet + alPetId.get(i).toString();
             }
         }
-
         return pet;
     }
 
@@ -125,10 +124,63 @@ public class ManagerDAO {
             if (species.equals(alPetId.get(i).getSpecies())) {
                 a++;
             }
+        }
+        return "The number of " + species + " is: " + a;
+    }
 
+    public String findBypotentDangerousInNeighborhood(int n, String position, String neighborhood) {
+
+        String pet = "";
+        int a = 0;
+        ArrayList<PetDTO> alDangerous = new ArrayList<PetDTO>();
+
+        for (int i = 0; i < alPetId.size(); i++) {
+            if (neighborhood.equals(alPetId.get(i).getNeighborhood()) && alPetId.get(i).isPotentDangerous()) {
+
+                alDangerous.add(alPetId.get(i));
+            }
         }
 
-        return "The number of " + species + " is: " + a;
+        if (n <= alDangerous.size()) {
+
+            if ("TOP".equals(position)) {
+
+                for (int i = 0; i < n; i++) {
+
+                    pet = pet + alDangerous.get(i).toString() + "\n";
+                }
+            } else {
+
+                for (int i = alDangerous.size() - 1; (alDangerous.size() - n) <= i; i--) {
+
+                    pet = pet + alDangerous.get(i).toString() + "\n";
+                }
+            }
+        } else {
+
+            pet = "Superado";
+        }
+        return pet;
+    }
+
+    public String findByMultipleFields(String sex, String species, String size, String potentDanger) {
+
+        String pet = "";
+
+        for (int i = 0; i < alPetId.size(); i++) {
+
+            if (sex.equals(alPetId.get(i).getSex()) && species.equals(alPetId.get(i).getSpecies()) && size.equals(alPetId.get(i).getSize())) {
+
+                if("SI".equals(potentDanger)){
+
+                    pet += alPetId.get(i).getId() + "\n";
+                }else{
+
+                    pet += alPetId.get(i).getId() + "\n";
+                }
+            }
+        }
+        return pet;
     }
 
 }
