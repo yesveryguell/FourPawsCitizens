@@ -2,6 +2,7 @@ package co.edu.unbosque.fourpawscitizens.model;
 
 public class PetDTO {
 
+
     String id;
     long microchip;
     String species;

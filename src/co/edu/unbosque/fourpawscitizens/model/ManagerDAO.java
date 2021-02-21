@@ -21,30 +21,21 @@ public class ManagerDAO {
 
             System.out.println(alPetId.get(i).getId());
         }
-
     }
 
-    public void uploadData() {
-
+    public String uploadData() {
         String bookmark = ";";
+        String back = "";
         BufferedReader bufferedReader = null;
-
         try {
-
             bufferedReader = new BufferedReader(new FileReader("src/data/pets-citizens.csv"));
-
             String line = bufferedReader.readLine();
-
             while (line != null) {
-
                 PetDTO pet = new PetDTO();
                 String[] space = line.split(bookmark);
-
                 if (space.length == 6) {
-
                     pet.setId("0");
                     try {
-
                         pet.setMicrochip(Long.parseLong(space[0]));
                         pet.setSpecies(space[1]);
                         pet.setSex(space[2]);
@@ -61,9 +52,6 @@ public class ManagerDAO {
                 }
                 line = bufferedReader.readLine();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
             if (bufferedReader != null) {
                 try {
                     bufferedReader.close();
@@ -71,10 +59,16 @@ public class ManagerDAO {
                     e.printStackTrace();
                 }
             }
+            back = "El proceso de carga del archivo ha finalizado";
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return back;
     }
 
-    public void assingID() {
+    public String assingID() {
+        String back = "";
+
         for (int i = 0; i < alPet.size(); i++) {
             String pId;
             String pMicrochip = String.valueOf(alPet.get(i).getMicrochip());
@@ -112,6 +106,24 @@ public class ManagerDAO {
                     alPet.get(i).getSize(), alPet.get(i).isPotentDangerous(), alPet.get(i).getNeighborhood());
             alPetId.add(pet);
 
+            back = "El proceso de asignación de ids ha finalizado";
         }
+        return back;
     }
+
+    public String findByMicrochip(long pMicrochip) {
+
+        PetDTO pet = new PetDTO();
+
+        for (int i = 0; i < alPetId.size(); i++) {
+
+            if (pMicrochip == alPetId.get(i).getMicrochip()) {
+
+                pet = alPetId.get(i);
+            }
+        }
+
+        return pet.toString();
+    }
+
 }
