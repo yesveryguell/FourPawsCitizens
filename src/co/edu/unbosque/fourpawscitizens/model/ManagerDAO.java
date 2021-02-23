@@ -119,7 +119,7 @@ public class ManagerDAO {
 
             if (microchip == alPetId.get(i).getMicrochip()) {
 
-                pet = pet + alPetId.get(i).toString() + "\n";
+                pet = "" + alPetId.get(i).toString() + "\n";
             }
         }
         return pet;
