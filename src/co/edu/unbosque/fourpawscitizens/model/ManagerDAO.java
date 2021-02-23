@@ -16,7 +16,13 @@ public class ManagerDAO {
         alPet = new ArrayList<PetDTO>();
         alPetId = new ArrayList<PetDTO>();
         uploadData();
-        assingID();
+        assignID();
+
+        for (int i = 0; i < alPetId.size(); i++) {
+
+            System.out.println(alPetId.get(i).getId());
+
+        }
     }
 
     public String uploadData() {
@@ -55,14 +61,14 @@ public class ManagerDAO {
                     e.printStackTrace();
                 }
             }
-            back = "El proceso de carga del archivo ha finalizado";
+            back = "The loading process of the document is totally successful.";
         } catch (IOException e) {
             e.printStackTrace();
         }
         return back;
     }
 
-    public String assingID() {
+    public String assignID() {
         String back = "";
 
         for (int i = 0; i < alPet.size(); i++) {
@@ -102,7 +108,7 @@ public class ManagerDAO {
                     alPet.get(i).getSize(), alPet.get(i).isPotentDangerous(), alPet.get(i).getNeighborhood());
             alPetId.add(pet);
 
-            back = "El proceso de asignación de ids ha finalizado";
+            back = "The assignation process of the I.D's is totally successful.";
         }
         return back;
     }
@@ -112,7 +118,8 @@ public class ManagerDAO {
         for (int i = 0; i < alPetId.size(); i++) {
 
             if (microchip == alPetId.get(i).getMicrochip()) {
-                pet = pet + alPetId.get(i).toString();
+
+                pet = pet + alPetId.get(i).toString() + "\n";
             }
         }
         return pet;
@@ -171,10 +178,10 @@ public class ManagerDAO {
 
             if (sex.equals(alPetId.get(i).getSex()) && species.equals(alPetId.get(i).getSpecies()) && size.equals(alPetId.get(i).getSize())) {
 
-                if("SI".equals(potentDanger)){
+                if ("SI".equals(potentDanger)) {
 
                     pet += alPetId.get(i).getId() + "\n";
-                }else{
+                } else {
 
                     pet += alPetId.get(i).getId() + "\n";
                 }
