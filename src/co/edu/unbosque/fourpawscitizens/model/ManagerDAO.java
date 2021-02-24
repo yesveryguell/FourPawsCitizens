@@ -127,8 +127,8 @@ public class ManagerDAO {
 
     public String countBySpecies(String species) {
         int a = 0;
-        for (int i = 0; i < alPetId.size(); i++) {
-            if (species.equals(alPetId.get(i).getSpecies())) {
+        for (int i = 0; i < alPet.size(); i++) {
+            if (species.equals(alPet.get(i).getSpecies())) {
                 a++;
             }
         }

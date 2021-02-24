@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="082a2bbf-5e90-40f4-a5be-ffa35cc813ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/ManagerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/ManagerDAO.java" afterDir="false" />
     </list>
@@ -25,6 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="AplMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -65,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614108529881</updated>
-      <workItem from="1614108551811" duration="1016000" />
+      <workItem from="1614108551811" duration="3585000" />
     </task>
     <servers />
   </component>
