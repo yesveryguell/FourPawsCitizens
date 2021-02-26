@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="082a2bbf-5e90-40f4-a5be-ffa35cc813ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/controller/AplMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/controller/AplMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/ManagerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/ManagerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/PetDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/fourpawscitizens/model/PetDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614108529881</updated>
       <workItem from="1614108551811" duration="3585000" />
-      <workItem from="1614292835813" duration="22886000" />
+      <workItem from="1614292835813" duration="23284000" />
     </task>
     <servers />
   </component>
