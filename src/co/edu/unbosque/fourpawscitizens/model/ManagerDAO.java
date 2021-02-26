@@ -15,14 +15,6 @@ public class ManagerDAO {
 
         alPet = new ArrayList<PetDTO>();
         alPetId = new ArrayList<PetDTO>();
-        uploadData();
-        assignID();
-
-        for (int i = 0; i < alPetId.size(); i++) {
-
-            System.out.println(alPetId.get(i).getId());
-
-        }
     }
 
     public String uploadData() {
@@ -76,14 +68,43 @@ public class ManagerDAO {
             String pMicrochip = String.valueOf(alPet.get(i).getMicrochip());
             String pSpecies = alPet.get(i).getSpecies();
             String pSex = alPet.get(i).getSex();
-            String pSize = alPet.get(i).getSize();
+            String pSize = alPet.get(i).getSize().toString();
             String pDangerous;
             String pNeighborhood = alPet.get(i).getNeighborhood();
 
             pMicrochip = pMicrochip.substring(pMicrochip.length() - 3, pMicrochip.length());
             pSex = pSex.substring(0, 1);
             pSpecies = pSpecies.substring(0, 1);
-            pSize = pSize.substring(0, 1);
+
+            switch (pSize) {
+
+                case "MINIATURA":
+                    pSize = "MI";
+                    break;
+
+                case "GIGANTE":
+                    pSize = "GI";
+                    break;
+
+                case "PEQUE�O":
+                    pSize = "P";
+                    break;
+
+                case "MEDIANO":
+                    pSize = "M";
+                    break;
+
+                case "GRANDE":
+                    pSize = "G";
+                    break;
+
+                case "MUY GRANDE":
+                    pSize = "MG";
+                    break;
+
+                default:
+                    pSize = "0000000000000000000000000000000000000";
+            }
 
             if (alPet.get(i).isPotentDangerous()) {
                 pDangerous = "T";
@@ -114,12 +135,14 @@ public class ManagerDAO {
     }
 
     public String findByMicrochip(long microchip) {
+
         String pet = "";
-        for (int i = 0; i < alPetId.size(); i++) {
 
-            if (microchip == alPetId.get(i).getMicrochip()) {
+        for (int i = 0; i < alPet.size(); i++) {
 
-                pet = "" + alPetId.get(i).toString() + "\n";
+            if (microchip == alPet.get(i).getMicrochip()) {
+
+                pet = "" + alPet.get(i).toString() + "\n";
             }
         }
         return pet;
@@ -149,15 +172,12 @@ public class ManagerDAO {
         }
 
         if (n <= alDangerous.size()) {
-
             if ("TOP".equals(position)) {
-
                 for (int i = 0; i < n; i++) {
 
                     pet = pet + alDangerous.get(i).toString() + "\n";
                 }
             } else {
-
                 for (int i = alDangerous.size() - 1; (alDangerous.size() - n) <= i; i--) {
 
                     pet = pet + alDangerous.get(i).toString() + "\n";
