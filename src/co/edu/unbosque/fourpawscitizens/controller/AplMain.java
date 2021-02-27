@@ -1,3 +1,6 @@
+/*
+ * package that contains the class
+ * */
 package co.edu.unbosque.fourpawscitizens.controller;
 
 import co.edu.unbosque.fourpawscitizens.model.ManagerDAO;
@@ -5,38 +8,69 @@ import co.edu.unbosque.fourpawscitizens.model.ManagerDAO;
 import javax.swing.*;
 import java.util.Scanner;
 
+/*
+ *
+ * AplMain class.
+ * This class contains the functional part of the program that runs the methods from other classes.
+ * Authors: (- Jhoan Ricardo Cuevas Patiño
+ *           - Juan Felipe Rojas Rodríguez)
+ *
+ * */
 public class AplMain {
 
     public static void main(String[] args) {
 
-
+        /*
+         * this attribute called managerDAO type ManagerDAO.
+         * */
         ManagerDAO managerDAO = new ManagerDAO();
-
+        /*
+         * this print a message that contains inside the System.
+         * */
         System.out.println("\n" + managerDAO.uploadData() + "\n");
+        /*
+         * this print a message that contains inside the System.
+         * */
         System.out.println(managerDAO.assignID() + "\n");
-
+        /*
+         * this attribute called seleccion type String.
+         * */
         String seleccion = "SI";
 
         do {
             try {
-
-                String informacion = "Señor usuario, por favor ingrese el número de la opción que desea realizar.\n" +
-                        "[1] Mostrar mascota por número de microchip.\n" +
-                        "[2] Cantidad de mascotas por especie.\n" +
-                        "[3] Mascotas potencialmente peligrosas según su localidad.\n" +
-                        "[4] Id de las mascotas segun sus caracteristicas.\n" +
-                        "[5] Salir";
-
+                /*
+                 * this attribute called informacion type String.
+                 * */
+                String informacion = "Dear user, please write a number for the option you want to use.\n" +
+                        "[1] A pet information finding with microchip.\n" +
+                        "[2] The number of pets by specie.\n" +
+                        "[3] Potentially dangerous pets by neighbourhood .\n" +
+                        "[4] Pet's ID by characteristics.\n" +
+                        "[5] Finish.";
+                /*
+                 * this print a message that contains inside the System.
+                 * */
                 System.out.println(informacion);
-
+                /*
+                 * this attribute called sc3 type Scanner.
+                 * */
                 Scanner sc3 = new Scanner(System.in);
+                /*
+                 * this attribute called numero type int.
+                 * */
                 int numero = sc3.nextInt();
-
+                /*
+                 * This method, when the user give a number for choose from the menu so he can
+                 * choose from 1 to 5. The number 1 find by microchip, the number 2 find by species,
+                 * the number 3 find by potential dangerous, the number 4 find the characteristics of the pets.
+                 * @param numero is the number choose the user numero is type int.
+                 * */
                 switch (numero) {
 
                     case 1:
 
-                        System.out.println("Por favor ingrese el microchip de su mascota.");
+                        System.out.println("Please write the number of the microchip: ");
                         int ex = 0;
                         do {
                             try {
@@ -55,8 +89,9 @@ public class AplMain {
                             }
 
                             if (ex == 1) {
-                                System.out.println("Señor usuario, el microship no fue encontrado.\nRecuerde que este solo debe contener caracteres numericos." +
-                                        "\nPor favor ingrese el microchip de su mascota de nuevo.");
+                                System.out.println("Dear user, we can't find the microchip.\n" +
+                                        "Remember you only can write numbers not another type of character." +
+                                        "\nPlease, rewrite the number of the microchip you gorgeous: .");
                             }
 
                         } while (ex == 1);
@@ -65,7 +100,7 @@ public class AplMain {
 
                     case 2:
 
-                        System.out.println("Por favor ingrese la especie.");
+                        System.out.println("Please dear user, write the specie: ");
                         String pEspecie;
                         do {
 
@@ -76,8 +111,9 @@ public class AplMain {
 
                                 System.out.println(managerDAO.countBySpecies(pEspecie));
                             } else {
-                                System.out.println("Señor usuario, recuerde que solo existe dos especies(Felino y Canino)." +
-                                        "\nPor favor ingrese la especie de nuevo.");
+                                System.out.println("Dear user, please remember only write this " +
+                                        "two species --> (Felino y Canino)." +
+                                        "\nPlease, rewrite the specie: ");
                             }
 
                         } while (!"CANINO".equals(pEspecie) && !"FELINO".equals(pEspecie));
@@ -85,7 +121,8 @@ public class AplMain {
                         break;
 
                     case 3:
-                        System.out.println("Por favor el ingrese el numero mascotas potencialmente peligrosas que desea ver.");
+                        System.out.println("Dear user, please write the number of pontentially " +
+                                "dangerous pets you want see: .");
                         int ex2 = 0;
                         int pN = 0;
                         do {
@@ -100,14 +137,14 @@ public class AplMain {
                             }
 
                             if (ex2 == 1) {
-                                System.out.println("Señor usuario ah escrito un caracter no valido\n" +
-                                        "\nPor favor el ingrese el numero mascotas potencialmente peligrosas que desea ver.");
+                                System.out.println("Dear user, you write a wrong chracter\n" +
+                                        "\nPlease rewrite the number of the potentially dangerous pets: ");
                             }
 
                         } while (ex2 == 1);
 
-                        System.out.println("Si desea ver los/las primeros/primeras " + pN + " mascotas, escriba: TOP.\n" +
-                                "Si desea ver los/las ultimos/ultimas " + pN + " mascotas, escriba: LAST");
+                        System.out.println("Do you want to see the first " + pN + " pets, write: TOP.\n" +
+                                "Do yo want to see the last " + pN + " pets, write: LAST");
                         String pPosition;
                         do {
 
@@ -116,15 +153,15 @@ public class AplMain {
 
                             if (!"TOP".equals(pPosition) && !"LAST".equals(pPosition)) {
 
-                                System.out.println("Señor usuario, recuerde que solo existe dos opciones(TOP y LAST)." +
-                                        "\nSi desea ver los/las primeros/primeras " + pN + " mascotas, escriba: TOP.\n" +
-                                        "Si desea ver los/las ultimos/ultimas " + pN + " mascotas, escriba: LAST");
+                                System.out.println("Dear user, please remember only write this two species -->(TOP y LAST)." +
+                                        "\nDo you want to see the first " + pN + " pets, write: TOP.\n" +
+                                        "Do yo want to see the last " + pN + " pets, write: LAST");
                             }
 
                         } while (!"LAST".equals(pPosition) && !"TOP".equals(pPosition));
 
 
-                        System.out.println("Por favor ingrese la localidad.");
+                        System.out.println("Dear user, please the neighborhood: .");
                         String pNeighborhood;
                         do {
 
@@ -134,13 +171,16 @@ public class AplMain {
                             if (!"A. NARINO".equals(pNeighborhood) && !"B. UNIDOS".equals(pNeighborhood) && !"BOSA".equals(pNeighborhood)
                                     && !"C. BOLIVAR".equals(pNeighborhood) && !"CHAPINERO".equals(pNeighborhood) && !"ENGATIVA".equals(pNeighborhood)
                                     && !"FONTIBON".equals(pNeighborhood) && !"KENNEDY".equals(pNeighborhood) && !"LA CANDELARIA".equals(pNeighborhood)
-                                    && !"LA CANDELARIA".equals(pNeighborhood) && !"LOS MARTIRES".equals(pNeighborhood) && !"MUNICIPIOS ALEDA�OS BOGOTA D.C.".equals(pNeighborhood)
-                                    && !"P. ARANDA".equals(pNeighborhood) && !"R. URIBE".equals(pNeighborhood) && !"SAN CRISTOBAL".equals(pNeighborhood) && !"SANTA FE".equals(pNeighborhood)
-                                    && !"SIN IDENTIFICAR".equals(pNeighborhood) && !"SUBA".equals(pNeighborhood) && !"SUMAPAZ".equals(pNeighborhood) && !"TEUSAQUILLO".equals(pNeighborhood)
-                                    && !"TUNJUELITO".equals(pNeighborhood) && !"USAQUEN".equals(pNeighborhood) && !"USME".equals(pNeighborhood)) {
+                                    && !"LA CANDELARIA".equals(pNeighborhood) && !"LOS MARTIRES".equals(pNeighborhood)
+                                    && !"MUNICIPIOS ALEDA�OS BOGOTA D.C.".equals(pNeighborhood) && !"P. ARANDA".equals(pNeighborhood)
+                                    && !"R. URIBE".equals(pNeighborhood) && !"SAN CRISTOBAL".equals(pNeighborhood)
+                                    && !"SANTA FE".equals(pNeighborhood) && !"SIN IDENTIFICAR".equals(pNeighborhood)
+                                    && !"SUBA".equals(pNeighborhood) && !"SUMAPAZ".equals(pNeighborhood)
+                                    && !"TEUSAQUILLO".equals(pNeighborhood) && !"TUNJUELITO".equals(pNeighborhood)
+                                    && !"USAQUEN".equals(pNeighborhood) && !"USME".equals(pNeighborhood)) {
 
-                                System.out.println("Señor usuario, la localidad no fue encontrada." +
-                                        "\nPor favor el ingrese la localidad de nuevo.");
+                                System.out.println("Dear user, we can't find your neighborhood." +
+                                        "\nPlease rewrite: ");
                             } else {
 
                                 System.out.println(managerDAO.findBypotentDangerousInNeighborhood(pN, pPosition, pNeighborhood));
@@ -149,16 +189,18 @@ public class AplMain {
                         } while (!"A. NARINO".equals(pNeighborhood) && !"B. UNIDOS".equals(pNeighborhood) && !"BOSA".equals(pNeighborhood)
                                 && !"C. BOLIVAR".equals(pNeighborhood) && !"CHAPINERO".equals(pNeighborhood) && !"ENGATIVA".equals(pNeighborhood)
                                 && !"FONTIBON".equals(pNeighborhood) && !"KENNEDY".equals(pNeighborhood) && !"LA CANDELARIA".equals(pNeighborhood)
-                                && !"LA CANDELARIA".equals(pNeighborhood) && !"LOS MARTIRES".equals(pNeighborhood) && !"MUNICIPIOS ALEDA�OS BOGOTA D.C.".equals(pNeighborhood)
-                                && !"P. ARANDA".equals(pNeighborhood) && !"R. URIBE".equals(pNeighborhood) && !"SAN CRISTOBAL".equals(pNeighborhood) && !"SANTA FE".equals(pNeighborhood)
-                                && !"SIN IDENTIFICAR".equals(pNeighborhood) && !"SUBA".equals(pNeighborhood) && !"SUMAPAZ".equals(pNeighborhood) && !"TEUSAQUILLO".equals(pNeighborhood)
-                                && !"TUNJUELITO".equals(pNeighborhood) && !"USAQUEN".equals(pNeighborhood) && !"USME".equals(pNeighborhood));
+                                && !"LA CANDELARIA".equals(pNeighborhood) && !"LOS MARTIRES".equals(pNeighborhood)
+                                && !"MUNICIPIOS ALEDA�OS BOGOTA D.C.".equals(pNeighborhood) && !"P. ARANDA".equals(pNeighborhood)
+                                && !"R. URIBE".equals(pNeighborhood) && !"SAN CRISTOBAL".equals(pNeighborhood) && !"SANTA FE".equals(pNeighborhood)
+                                && !"SIN IDENTIFICAR".equals(pNeighborhood) && !"SUBA".equals(pNeighborhood) && !"SUMAPAZ".equals(pNeighborhood)
+                                && !"TEUSAQUILLO".equals(pNeighborhood) && !"TUNJUELITO".equals(pNeighborhood)
+                                && !"USAQUEN".equals(pNeighborhood) && !"USME".equals(pNeighborhood));
 
                         break;
 
                     case 4:
 
-                        System.out.println("Por favor ingrese la especie de la moscota.");
+                        System.out.println("Please dear user, write the specie:");
                         String pEspecie2;
                         do {
 
@@ -167,8 +209,7 @@ public class AplMain {
 
                             if ("CANINO".equals(pEspecie2) || "FELINO".equals(pEspecie2)) {
                             } else {
-                                System.out.println("Señor usuario, recuerde que solo existe dos especies(Felino y Canino)." +
-                                        "\nPor favor ingrese la especie de la moscota de nuevo.");
+                                System.out.println("");
                             }
                         } while (!"CANINO".equals(pEspecie2) && !"FELINO".equals(pEspecie2));
 
@@ -182,13 +223,14 @@ public class AplMain {
 
                             if ("MACHO".equals(pSex) || "HEMBRA".equals(pSex)) {
                             } else {
-                                System.out.println("Señor usuario, recuerde que solo existe dos sexos(Macho y Hembra)." +
-                                        "\nPor favor ingrese el sexo de la mascota de nuevo.");
+                                System.out.println("Dear user, please remember only write this" +
+                                        "two type of sex --> (hembra y macho)." +
+                                        "\nPlease, rewrite the sex: ");
                             }
                         } while (!"MACHO".equals(pSex) && !"HEMBRA".equals(pSex));
 
 
-                        System.out.println("Por favor ingrese el tamaño de la mascota");
+                        System.out.println("Dear user, please write the size of the pet");
                         String pSize;
                         do {
 
@@ -198,15 +240,15 @@ public class AplMain {
                             if ("GIGANTE".equals(pSize) || "GRANDE".equals(pSize) || "MEDIANO".equals(pSize) || "MINIATURA".equals(pSize)
                                     || "MUY GRANDE".equals(pSize) || "PEQUE�O".equals(pSize)) {
                             } else {
-                                System.out.println("Señor usuario, el tamaño no es valido." +
-                                        "\nPor favor ingrese el tamaño de la mascota de nuevo.");
+                                System.out.println("Dear user, you wrote the wrong size." +
+                                        "\nPlease rewrite the size: ");
                             }
                         } while (!"GIGANTE".equals(pSize) && !"GRANDE".equals(pSize) && !"MEDIANO".equals(pSize) && !"MINIATURA".equals(pSize)
                                 && !"MUY GRANDE".equals(pSize) && !"PEQUE�O".equals(pSize));
 
 
-                        System.out.println("Si la mascota es potencialmente peligrosa escriba: SI\n" +
-                                "Si la mascota no es potencialmente peligrosa escriba: NO");
+                        System.out.println("If the pet is potentially dangerous write: SI\n" +
+                                "If the pet isn't potentially dangerous write: NO");
                         String pPotentDangerous;
                         do {
 
@@ -217,9 +259,10 @@ public class AplMain {
 
                                 System.out.println(managerDAO.findByMultipleFields(pSex, pEspecie2, pSize, pPotentDangerous));
                             } else {
-                                System.out.println("Señor usuario, recuerde que solo existen dos opciones(Si y No)." +
-                                        "\nSi la mascota es potencialmente peligrosa escriba: SI\n" +
-                                        "Si la mascota no es potencialmente peligrosa escriba: NO");
+                                System.out.println("Dear user, please remember only write this" +
+                                                "two type of choices --> (SI y NO)." +
+                                        "\nIf the pet is potentially dangerous write: SI\n" +
+                                        "If the pet isn't potentially dangerous write: NO");
                             }
                         } while (!"SI".equals(pPotentDangerous) && !"NO".equals(pPotentDangerous));
 
@@ -232,13 +275,13 @@ public class AplMain {
 
                     default:
 
-                        System.out.println("Señor usuario, por favor ingrese un numero de las lista.");
+                        System.out.println("Dear user, please write a number: ");
                         break;
                 }
 
             } catch (Exception e1) {
 
-                System.out.println("A escrito un caracter no valido.");
+                System.out.println("You wrote a wrong character.");
             }
         } while ("SI".equals(seleccion.toUpperCase()));
     }

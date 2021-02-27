@@ -1,3 +1,6 @@
+/*
+ * package that contains the class
+ * */
 package co.edu.unbosque.fourpawscitizens.model;
 
 import java.io.BufferedReader;
@@ -5,18 +8,36 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+/*
+ *
+ * ManagerDAO class.
+ * This class contains the DAO a part of the program that create, read, update and delete.
+ * @authors  (- Jhoan Ricardo Cuevas Patiño
+ *            - Juan Felipe Rojas Rodríguez)
+ *
+ * */
 public class ManagerDAO {
-
+    /*
+    * alPet is type ArrayList<PetDTO>
+    * */
     ArrayList<PetDTO> alPet;
+    /*
+    * alPetId is type ArrayList<PetDTO>
+    * */
     ArrayList<PetDTO> alPetId;
-
+    /*
+    * constructor of the class that inicializate the ArrayList.
+    * */
     public ManagerDAO() {
 
         alPet = new ArrayList<PetDTO>();
         alPetId = new ArrayList<PetDTO>();
     }
-
+    /*
+    * This method find in the archive all data, if the microchip is alphanumeric that data
+    * will not be add to the ArrayList but if have only numbers will be added to the ArrayList.
+    * @return atrribute back with a pharase that is completly loaded.
+    * */
     public String uploadData() {
         String bookmark = ";";
         String back = "";
@@ -59,7 +80,11 @@ public class ManagerDAO {
         }
         return back;
     }
-
+    /*
+    * This method assign an ID for every pet in the list the last 3 digits of the microchip.
+    * If repeated the method add another digit.
+    * @return an attribute type String saying all ID's is successfully assigned.
+    * */
     public String assignID() {
         String back = "";
 
@@ -133,7 +158,13 @@ public class ManagerDAO {
         }
         return back;
     }
-
+    /*
+    * This method find a pet with the number of microchip if is same will show all
+    * data of the pet.
+    * @param is the microchip type long and microchip != 0.
+    * @return pet type String showing all data of the pet founded by microchip.
+    *
+    * */
     public String findByMicrochip(long microchip) {
 
         String pet = "";
@@ -147,7 +178,12 @@ public class ManagerDAO {
         }
         return pet;
     }
-
+    /*
+     * This method count the species what the user want.
+     * @param species is type String and species != null.
+     * @return species type String and a with the name of the species and number.
+     *
+     * */
     public String countBySpecies(String species) {
         int a = 0;
         for (int i = 0; i < alPet.size(); i++) {
@@ -157,7 +193,16 @@ public class ManagerDAO {
         }
         return "The number of " + species + " is: " + a;
     }
-
+    /*
+     * This method find by all pets dangerous in the neighbourhood
+     * and the position de user want top/last.
+     * @param n is type int and n != 0.
+     * @param position is type String and position != null.
+     * @param neighborhood is type String and neighborhood != null.
+     * @return pet type String with the numbers of pets the users wants see and
+     * with the information complete about the pet.
+     *
+     * */
     public String findBypotentDangerousInNeighborhood(int n, String position, String neighborhood) {
 
         String pet = "";
@@ -189,7 +234,16 @@ public class ManagerDAO {
         }
         return pet;
     }
-
+    /*
+     * This method find the pet with multiple attributes and show them if all what user
+     * write is correct.
+     * @param sex is type String and sex != null.
+     * @param species is type String and position != null.
+     * @param size is type String and neighborhood != null.
+     * @param potentDanger is type String and potentDanger != null.
+     * @return pet type String with the ID's with the same characteristics.
+     *
+     * */
     public String findByMultipleFields(String sex, String species, String size, String potentDanger) {
 
         String pet = "";

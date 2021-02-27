@@ -1,16 +1,56 @@
+/*
+ * package that contains the class
+ * */
 package co.edu.unbosque.fourpawscitizens.model;
-
+/*
+ *
+ * PetDTO class.
+ * This class contains the DTO mean the class have all attributes to create an object and
+ * have all the attributes.
+ * @authors  (- Jhoan Ricardo Cuevas Patiño
+ *            - Juan Felipe Rojas Rodríguez)
+ *
+ * */
 public class PetDTO {
-
-
+    /*
+    * id type String.
+    * */
     String id;
+    /*
+    * microchip type long.
+    * */
     long microchip;
+    /*
+    * species type String.
+    * */
     String species;
+    /*
+     * sex type String.
+     * */
     String sex;
+    /*
+     * size type String.
+     * */
     String size;
+    /*
+     * potentDangerous type boolean.
+     * */
     boolean potentDangerous;
+    /*
+     * neighborhood type String.
+     * */
     String neighborhood;
 
+    /*
+    * Specific constructor with all attributes and can use with other classes.
+    * @param id is the type String and id != null.
+    * @param microchip is the type long and microchip != 0.
+    * @param species is the type String and species != null.
+    * @param sex is the type String and sex != null.
+    * @param size is the type String and size != null.
+    * @param potentDangerous is the type boolean and potentDangerous = false v true.
+    * @param neighborhood is the type String and neighborhood != null.
+    * */
     public PetDTO(String id, long microchip, String species, String sex, String size, boolean potentDangerous,
                   String neighborhood) {
         super();
@@ -22,7 +62,9 @@ public class PetDTO {
         this.potentDangerous = potentDangerous;
         this.neighborhood = neighborhood;
     }
-
+    /*
+    * Empty constructor of the class.
+    * */
     public PetDTO() {
 
     }
