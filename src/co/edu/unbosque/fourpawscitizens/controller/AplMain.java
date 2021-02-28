@@ -1,6 +1,6 @@
-/*
+/**
  * package that contains the class
- * */
+ */
 package co.edu.unbosque.fourpawscitizens.controller;
 
 import co.edu.unbosque.fourpawscitizens.model.ManagerDAO;
@@ -8,64 +8,65 @@ import co.edu.unbosque.fourpawscitizens.model.ManagerDAO;
 import javax.swing.*;
 import java.util.Scanner;
 
-/*
- *
+/**
  * AplMain class.
  * This class contains the functional part of the program that runs the methods from other classes.
- * Authors: (- Jhoan Ricardo Cuevas Patiño
- *           - Juan Felipe Rojas Rodríguez)
  *
- * */
+ * @authors : (- Jhoan Ricardo Cuevas Patiño
+ *             - Juan Felipe Rojas Rodríguez)
+ */
 public class AplMain {
 
     public static void main(String[] args) {
 
-        /*
+        /**
          * this attribute called managerDAO type ManagerDAO.
-         * */
+         */
         ManagerDAO managerDAO = new ManagerDAO();
-        /*
+        /**
          * this print a message that contains inside the System.
-         * */
+         */
         System.out.println("\n" + managerDAO.uploadData() + "\n");
-        /*
+        /**
          * this print a message that contains inside the System.
-         * */
+         */
         System.out.println(managerDAO.assignID() + "\n");
-        /*
+        /**
          * this attribute called seleccion type String.
-         * */
+         */
         String seleccion = "SI";
 
         do {
             try {
-                /*
+                /**
                  * this attribute called informacion type String.
-                 * */
+                 */
                 String informacion = "Dear user, please write a number for the option you want to use.\n" +
                         "[1] A pet information finding with microchip.\n" +
                         "[2] The number of pets by specie.\n" +
                         "[3] Potentially dangerous pets by neighbourhood .\n" +
                         "[4] Pet's ID by characteristics.\n" +
                         "[5] Finish.";
-                /*
+                /**
                  * this print a message that contains inside the System.
-                 * */
+                 */
                 System.out.println(informacion);
-                /*
+                /**
                  * this attribute called sc3 type Scanner.
-                 * */
+                 */
                 Scanner sc3 = new Scanner(System.in);
-                /*
+                /**
                  * this attribute called numero type int.
-                 * */
+                 */
                 int numero = sc3.nextInt();
-                /*
+                /**
                  * This method, when the user give a number for choose from the menu so he can
                  * choose from 1 to 5. The number 1 find by microchip, the number 2 find by species,
                  * the number 3 find by potential dangerous, the number 4 find the characteristics of the pets.
+                 * <pre>The user write the number for what he want to make.</pre>
+                 * <post>The program will show the option and what he needs.</post>
                  * @param numero is the number choose the user numero is type int.
-                 * */
+                 */
                 switch (numero) {
 
                     case 1:
@@ -260,7 +261,7 @@ public class AplMain {
                                 System.out.println(managerDAO.findByMultipleFields(pSex, pEspecie2, pSize, pPotentDangerous));
                             } else {
                                 System.out.println("Dear user, please remember only write this" +
-                                                "two type of choices --> (SI y NO)." +
+                                        "two type of choices --> (SI y NO)." +
                                         "\nIf the pet is potentially dangerous write: SI\n" +
                                         "If the pet isn't potentially dangerous write: NO");
                             }
